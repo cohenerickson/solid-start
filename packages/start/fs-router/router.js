@@ -289,7 +289,7 @@ export function stringifyPageRoutes(routesConfig, options = {}) {
                 : "",
               `component: ${
                 options.lazy
-                  ? `lazy(() => import('${path.posix.resolve(i.componentPath)}'))`
+                  ? `lazy(() => import('/assets/${path.posix.resolve(i.componentPath)}'))`
                   : jsFile.addImport(path.posix.resolve(i.componentPath))
               }`,
               ...Object.keys(i)
